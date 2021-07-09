@@ -3,7 +3,7 @@
 @Description: 网络请求封装
 @version: 0.0.0
 @Date: 2021-07-09 15:59:52
-@LastEditTime: 2021-07-09 16:49:25
+@LastEditTime: 2021-07-09 16:47:51
 @LastEditors: xiaolifeipiao
 @FilePath: \src\utils\https.ts
  */
