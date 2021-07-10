@@ -10,7 +10,6 @@ import { ConfigProvider } from 'vant';
 const app = createApp(App);
 // 加载所有插件
 // loadAllPlugins(app)
-app.use(ConfigProvider);
 app.use(store)
 app.use(router)
 app.mount('#app')

@@ -1,11 +1,10 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld/>
-  <nav-bar :title="title"></nav-bar>
 </template>
 
 <script lang="ts">
-import { defineComponent,ref } from 'vue'
+import { defineComponent } from 'vue'
 import HelloWorld from '@coms/HelloWorld.vue'
 import NavBar from '@coms/NavBar.vue'
 import {useStore} from 'vuex'
@@ -20,11 +19,12 @@ export default defineComponent({
  setup(){
     const store = useStore()
     let userInfo= { username:'sdsd', password:'sds' } ;
-    const title = ref("我的")
+    // console.log(import.meta.env)
+    // console.log(import.meta.env.VITE_APP_BASE_API 
+// );
+    
 
-   return{
-     title
-   }
+   
   }
 })
 </script>

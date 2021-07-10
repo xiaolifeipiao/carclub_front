@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent,ref } from 'vue'
+import { defineComponent } from 'vue'
 import HelloWorld from '@coms/HelloWorld.vue'
 import NavBar from '@coms/NavBar.vue'
 import {useStore} from 'vuex'

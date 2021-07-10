@@ -1,11 +1,11 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld/>
-  <nav-bar :title="title"></nav-bar>
+  <nav-bar></nav-bar>
 </template>
 
 <script lang="ts">
-import { defineComponent,ref } from 'vue'
+import { defineComponent } from 'vue'
 import HelloWorld from '@coms/HelloWorld.vue'
 import NavBar from '@coms/NavBar.vue'
 import {useStore} from 'vuex'
