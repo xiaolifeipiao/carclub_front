@@ -1,32 +1,38 @@
 <!--
  * @Author: xiaolifeipiao
- * @Description: 导航栏封装
+ * @Description: 标签栏
  * @version: 0.0.0
- * @Date: 2021-07-10 14:34:21
- * @LastEditTime: 2021-07-10 15:19:10
+ * @Date: 2021-07-10 15:18:36
+ * @LastEditTime: 2021-07-10 15:25:17
  * @LastEditors: xiaolifeipiao
- * @FilePath: \src\components\NavBar.vue
+ * @FilePath: \src\components\Tabbar.vue
 -->
 
 <template>
 <van-config-provider :theme-vars="themeVars">
-    <van-nav-bar :title="title"  @click-left="onClickLeft" left-arrow>
-        <template #right>
-            <van-icon name="search" size="18" />
-        </template>
-</van-nav-bar>
+    <van-tabbar v-model="active">
+        <van-tabbar-item badge="3">
+            <span>自定义</span>
+            <template #icon="props">
+            <img :src="props.active ? icon.active : icon.inactive" />
+            </template>
+        </van-tabbar-item>
+        <van-tabbar-item icon="search">标签</van-tabbar-item>
+        <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+    </van-tabbar>
 </van-config-provider>
 
 </template>
 
 <script lang="ts">
 import { ref, defineComponent, onMounted } from 'vue'
-import { NavBar } from 'vant';
+import { Tabbar, TabbarItem } from 'vant';
 import { log } from 'console';
 export default defineComponent({
-  name: 'NavBar',
+  name: 'TabBar',
   components:{
-     [NavBar.name]:NavBar
+      [Tabbar.name]:Tabbar,
+      [TabbarItem.name]:TabbarItem
   },
   props: {
     title: {

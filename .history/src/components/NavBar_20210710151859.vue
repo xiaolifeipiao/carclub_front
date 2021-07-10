@@ -1,9 +1,9 @@
 <!--
  * @Author: xiaolifeipiao
- * @Description: 导航栏封装
+ * @Description: 
  * @version: 0.0.0
  * @Date: 2021-07-10 14:34:21
- * @LastEditTime: 2021-07-10 15:19:10
+ * @LastEditTime: 2021-07-10 15:18:59
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\components\NavBar.vue
 -->

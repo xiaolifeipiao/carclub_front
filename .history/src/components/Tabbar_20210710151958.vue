@@ -1,11 +1,11 @@
 <!--
  * @Author: xiaolifeipiao
- * @Description: 导航栏封装
+ * @Description: 标签栏
  * @version: 0.0.0
- * @Date: 2021-07-10 14:34:21
- * @LastEditTime: 2021-07-10 15:19:10
+ * @Date: 2021-07-10 15:18:36
+ * @LastEditTime: 2021-07-10 15:19:58
  * @LastEditors: xiaolifeipiao
- * @FilePath: \src\components\NavBar.vue
+ * @FilePath: \src\components\Tabbar.vue
 -->
 
 <template>
@@ -21,7 +21,7 @@
 
 <script lang="ts">
 import { ref, defineComponent, onMounted } from 'vue'
-import { NavBar } from 'vant';
+import { Tabbar, TabbarItem } from 'vant';
 import { log } from 'console';
 export default defineComponent({
   name: 'NavBar',

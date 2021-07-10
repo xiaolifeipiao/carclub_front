@@ -1,32 +1,42 @@
 <!--
  * @Author: xiaolifeipiao
- * @Description: 导航栏封装
+ * @Description: 标签栏
  * @version: 0.0.0
- * @Date: 2021-07-10 14:34:21
- * @LastEditTime: 2021-07-10 15:19:10
+ * @Date: 2021-07-10 15:18:36
+ * @LastEditTime: 2021-07-10 15:28:46
  * @LastEditors: xiaolifeipiao
- * @FilePath: \src\components\NavBar.vue
+ * @FilePath: \src\components\Tabbar.vue
 -->
 
 <template>
 <van-config-provider :theme-vars="themeVars">
-    <van-nav-bar :title="title"  @click-left="onClickLeft" left-arrow>
-        <template #right>
-            <van-icon name="search" size="18" />
-        </template>
-</van-nav-bar>
+    <van-tabbar v-model="active">
+        <van-tabbar-item badge="3">
+            <span>选车</span>
+            <template #icon="props">
+            <img :src="props.activeCar ? icon.active : icon.inactive" />
+            </template>
+        </van-tabbar-item>
+        <van-tabbar-item badge="3">
+            <span>我的</span>
+            <template #icon="props">
+            <img :src="props.activeMe ? icon.active : icon.inactive" />
+            </template>
+        </van-tabbar-item>
+    </van-tabbar>
 </van-config-provider>
 
 </template>
 
 <script lang="ts">
 import { ref, defineComponent, onMounted } from 'vue'
-import { NavBar } from 'vant';
+import { Tabbar, TabbarItem } from 'vant';
 import { log } from 'console';
 export default defineComponent({
-  name: 'NavBar',
+  name: 'TabBar',
   components:{
-     [NavBar.name]:NavBar
+      [Tabbar.name]:Tabbar,
+      [TabbarItem.name]:TabbarItem
   },
   props: {
     title: {
@@ -35,9 +45,12 @@ export default defineComponent({
     }
   },
   setup: (props) => {
-      const title = ref('测试')
-      title.value = props.title;
-      const onClickLeft = () => console.log("返回");
+      const activeCar = ref(0);
+       const activeMe = ref(0);
+      const icon = {
+        active: 'https://img.yzcdn.cn/vant/user-active.png',
+        inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
+    };
       // themeVars 内的值会被转换成对应 CSS 变量
     // 比如 sliderBarHeight 会转换成 `--van-slider-bar-height`
     const themeVars = {
@@ -49,8 +62,9 @@ export default defineComponent({
         navBarTitleTextColor:'#333333'
     };
     return { 
-        title,
-        onClickLeft,
+        icon,
+        activeCar,
+        activeMe,
         themeVars
      }
   }

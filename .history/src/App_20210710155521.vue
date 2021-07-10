@@ -19,8 +19,8 @@ export default defineComponent({
     HelloWorld,
     NavBar,
     TabBar
-  },
-  setup(){
+  }
+ setup(){
     const store = useStore()
     const title = ref("我的")
     return{

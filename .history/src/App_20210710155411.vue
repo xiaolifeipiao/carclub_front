@@ -19,13 +19,15 @@ export default defineComponent({
     HelloWorld,
     NavBar,
     TabBar
-  },
-  setup(){
+  }
+ setup(){
     const store = useStore()
+    let userInfo= { username:'sdsd', password:'sds' } ;
     const title = ref("我的")
-    return{
-      title
-    }
+
+   return{
+     title
+   }
   }
 })
 </script>

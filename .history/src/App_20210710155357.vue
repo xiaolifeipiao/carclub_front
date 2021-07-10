@@ -2,7 +2,6 @@
   <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld/>
   <nav-bar :title="title"></nav-bar>
-  <tab-bar></tab-bar>
 </template>
 
 <script lang="ts">
@@ -19,13 +18,15 @@ export default defineComponent({
     HelloWorld,
     NavBar,
     TabBar
-  },
-  setup(){
+  }
+ setup(){
     const store = useStore()
+    let userInfo= { username:'sdsd', password:'sds' } ;
     const title = ref("我的")
-    return{
-      title
-    }
+
+   return{
+     title
+   }
   }
 })
 </script>

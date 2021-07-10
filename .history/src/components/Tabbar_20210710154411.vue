@@ -1,0 +1,88 @@
+<!--
+ * @Author: xiaolifeipiao
+ * @Description: 标签栏
+ * @version: 0.0.0
+ * @Date: 2021-07-10 15:18:36
+ * @LastEditTime: 2021-07-10 15:44:11
+ * @LastEditors: xiaolifeipiao
+ * @FilePath: \src\components\Tabbar.vue
+-->
+
+<template>
+<van-config-provider :theme-vars="themeVars">
+    <van-tabbar v-model="active">
+        <van-tabbar-item badge="3">
+            <span>选车</span>
+            <template #icon="props">
+            <img :src="props.activeCar ? icon.active : icon.inactive" />
+            </template>
+        </van-tabbar-item>
+        <van-tabbar-item badge="3">
+            <span>我的</span>
+            <template #icon="props">
+            <img :src="props.activeMe ? icon.active : icon.inactive" />
+            </template>
+        </van-tabbar-item>
+    </van-tabbar>
+</van-config-provider>
+
+</template>
+
+<script lang="ts">
+import { ref, defineComponent, onMounted } from 'vue'
+import { Tabbar, TabbarItem } from 'vant';
+import { log } from 'console';
+export default defineComponent({
+  name: 'TabBar',
+  components:{
+      [Tabbar.name]:Tabbar,
+      [TabbarItem.name]:TabbarItem
+  },
+  props: {
+    title: {
+      type: String,
+      required: true
+    }
+  },
+  setup: (props) => {
+      const activeCar = ref(0);
+       const activeMe = ref(0);
+      const iconCar = {
+        active: '@/assets/icon/active/选车-选中@2x.png',
+        inactive: '@/assets/icon/inactive/选车@2x.png',
+     };
+     const iconMe = {
+        active: '@/assets/icon/active/我的-选中@2x.png',
+        inactive: '@/assets/icon/inactive/我的@2x.png',
+     };
+      // themeVars 内的值会被转换成对应 CSS 变量
+    // 比如 sliderBarHeight 会转换成 `--van-slider-bar-height`
+    const themeVars = {
+        navBarHeight:'44px',
+        navBarArrowSize:'20px',
+        navBarIconColor:'#333333',
+        navBarTextColor:'#333333',
+        navBarTitleFontSize:'16px',
+        navBarTitleTextColor:'#333333'
+    };
+    return { 
+        icon,
+        activeCar,
+        activeMe,
+        themeVars
+     }
+  }
+})
+</script>
+
+<style scoped>
+/** 覆盖 Button 最外层元素的样式 */
+  .my-button {
+    width: 200px;
+  }
+
+  /** 覆盖 Button 内部子元素的样式 */
+  .my-button .van-button__text {
+    color: red;
+  }
+</style>
