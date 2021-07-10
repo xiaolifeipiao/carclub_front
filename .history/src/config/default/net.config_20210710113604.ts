@@ -7,7 +7,7 @@
 @LastEditors: xiaolifeipiao
 @FilePath: \src\config\default\net.config.ts
  */
-import { ContentType, Device } from '@/constant/headers'
+import { ContentType, Device } from '@/constant/headers.ts'
 import { InfoShowType } from '@/constant/network'
 import settings from "./setting.config";
 interface Headers{

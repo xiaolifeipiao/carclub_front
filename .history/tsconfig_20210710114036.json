@@ -9,11 +9,12 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
-    "baseUrl": ".",
+    "baseUrl": "",
     "paths": {
       "@/*":["src/*"],
-      "@utils":["src/utils/*"],
-      "@coms/*":["src/components/*"]
+      "@coms/*":["src/components/*"],
+      "@/utils*":["src/utils/*"],
+      "@/constant*":["src/constant/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "vite-env.d.ts"],

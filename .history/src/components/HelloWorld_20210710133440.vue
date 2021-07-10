@@ -10,8 +10,6 @@
 <script lang="ts">
 import { ref, defineComponent, onMounted } from 'vue'
 import {Button} from 'vant'
-import { useStore } from 'vuex'
-import { UserActionTypes } from '@/store/modules/user/enum_type'
 export default defineComponent({
   name: 'HelloWorld',
   components:{
@@ -24,7 +22,6 @@ export default defineComponent({
     }
   },
   setup: () => {
-    const store = useStore()
     const count = ref(0)
     onMounted(async()=>{
         await store.dispatch(UserActionTypes.ACTION_GET_USER_INFO)

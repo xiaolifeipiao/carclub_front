@@ -23,7 +23,7 @@ export default defineConfig({
          // 字符串简写写法
       // '/user': 'http://localhost:4567/foo',
       '/api': {
-        target: 'http://localhost:8000',
+        target: 'localhost:8000',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       },

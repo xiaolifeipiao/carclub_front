@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import styleImport from 'vite-plugin-style-import';
+import from ''
 //路径处理模块
 import path from "path";
 const Resolve = (name:any) => path.resolve(__dirname, name);
@@ -9,8 +10,8 @@ export default defineConfig({
   //定义别名
   resolve: {
     alias: [
-      { find: '@', replacement: Resolve('src') },
-      {find:'@utils',replacement:Resolve('src/utils')},
+      { find: '@', replacement: Resolve('./src') },
+      {find:'@utils',replacement:Resolve('./src/utils')},
       {find:'@coms',replacement:Resolve('src/components')}
     ]
   },
@@ -23,7 +24,7 @@ export default defineConfig({
          // 字符串简写写法
       // '/user': 'http://localhost:4567/foo',
       '/api': {
-        target: 'http://localhost:8000',
+        target: import.meta.env.VITE_APP_BASE_API,
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       },

@@ -11,7 +11,6 @@
 import { ref, defineComponent, onMounted } from 'vue'
 import {Button} from 'vant'
 import { useStore } from 'vuex'
-import { UserActionTypes } from '@/store/modules/user/enum_type'
 export default defineComponent({
   name: 'HelloWorld',
   components:{

@@ -7,14 +7,14 @@
 import { defineComponent } from 'vue'
 import HelloWorld from '@coms/HelloWorld.vue'
 import {useStore} from 'vuex'
-
+import { UserActionTypes } from '@/store/modules/user/enum_type'
 import { log } from 'util'
 export default defineComponent({
   name: 'App',
   components: {
     HelloWorld
   },
- setup(){
+  async setup(){
     const store = useStore()
     let userInfo= { username:'sdsd', password:'sds' } ;
     // console.log(import.meta.env)

@@ -7,7 +7,7 @@
 import { defineComponent } from 'vue'
 import HelloWorld from '@coms/HelloWorld.vue'
 import {useStore} from 'vuex'
-
+import { UserActionTypes } from '@/store/modules/user/enum_type'
 import { log } from 'util'
 export default defineComponent({
   name: 'App',

@@ -3,7 +3,7 @@
 @Description: 网络请求封装
 @version: 0.0.0
 @Date: 2021-07-09 15:59:52
-@LastEditTime: 2021-07-10 13:28:23
+@LastEditTime: 2021-07-10 13:28:11
 @LastEditors: xiaolifeipiao
 @FilePath: \src\utils\https.ts
  */
@@ -14,7 +14,7 @@ import {baseUrl} from './baseUrl'
 
 const https = (hasToken: Boolean = true) => {
   const config: HttpClientConfig = {
-    // baseURL: baseUrl,
+    // baseURL: networkConfig.host,
     baseURL:'',
     headers: {
       token: hasToken ? useStore().state.user.token : ''
