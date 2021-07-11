@@ -3,11 +3,10 @@
  * @Description: 标签栏
  * @version: 0.0.0
  * @Date: 2021-07-10 15:18:36
- * @LastEditTime: 2021-07-10 16:22:32
+ * @LastEditTime: 2021-07-10 21:29:28
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\components\Tabbar.vue
 -->
-
 <template>
 <van-config-provider :theme-vars="themeVars">
     <van-tabbar v-model="active" class="tab_bar_mb">
