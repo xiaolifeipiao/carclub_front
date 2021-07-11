@@ -1,17 +1,15 @@
 <template>
   <!-- <HelloWorld/> -->
-  <!-- <router-view></router-view> -->
-  <car-series-item></car-series-item>
+  <router-view></router-view>
 </template>
 
 <script lang="ts">
 import { defineComponent,ref } from 'vue'
 import {useStore} from 'vuex'
-import CarSeriesItem from '@coms/CarSeriesItem.vue'
+import  from '@coms/BrandCarSer'
 export default defineComponent({
   name: 'App',
   components: {
-    CarSeriesItem
   },
   setup(){
   }

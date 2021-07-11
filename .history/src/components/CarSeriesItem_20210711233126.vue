@@ -3,7 +3,7 @@
  * @Description: 车系列表项
  * @version: 0.0.0
  * @Date: 2021-07-11 19:11:04
- * @LastEditTime: 2021-07-11 23:32:01
+ * @LastEditTime: 2021-07-11 23:31:26
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\components\CarSeriesItem.vue
 -->
@@ -19,15 +19,15 @@
 <template>
 <van-config-provider :theme-vars="themeVars">
     <van-row  align="center" class="car">
-        <van-col span="8">
+        <van-col span="7">
             <van-image
             class="car_image"
             fit="cover"
             src="src/assets/webp/1.webp"
             />
         </van-col>
-        <van-col span="11">
-            <div class="car_name">宝马2系旅</div>
+        <van-col span="12">
+            <div class="car_name">宝马2系旅行车新能源(进口)</div>
             <div v-if="!isCarRate">
                 <my-rate :rateValue="myRateValue">
                     <template v-slot:rate_title>

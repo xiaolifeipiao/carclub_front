@@ -3,7 +3,7 @@
  * @Description: 车系列表项
  * @version: 0.0.0
  * @Date: 2021-07-11 19:11:04
- * @LastEditTime: 2021-07-11 23:32:01
+ * @LastEditTime: 2021-07-11 23:31:54
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\components\CarSeriesItem.vue
 -->
@@ -26,7 +26,7 @@
             src="src/assets/webp/1.webp"
             />
         </van-col>
-        <van-col span="11">
+        <van-col span="12">
             <div class="car_name">宝马2系旅</div>
             <div v-if="!isCarRate">
                 <my-rate :rateValue="myRateValue">

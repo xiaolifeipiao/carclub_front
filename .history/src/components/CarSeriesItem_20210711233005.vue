@@ -3,7 +3,7 @@
  * @Description: 车系列表项
  * @version: 0.0.0
  * @Date: 2021-07-11 19:11:04
- * @LastEditTime: 2021-07-11 23:32:01
+ * @LastEditTime: 2021-07-11 23:30:04
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\components\CarSeriesItem.vue
 -->
@@ -27,7 +27,7 @@
             />
         </van-col>
         <van-col span="11">
-            <div class="car_name">宝马2系旅</div>
+            <div class="car_name">宝马2系旅行车新能源(进口)</div>
             <div v-if="!isCarRate">
                 <my-rate :rateValue="myRateValue">
                     <template v-slot:rate_title>
@@ -84,7 +84,7 @@ export default defineComponent({
         required:true
     },
     rateList: {
-      type: Object as PropType<RateProps>,
+      type: Object as as PropType<RateProps>,
       required: true
     }
   },

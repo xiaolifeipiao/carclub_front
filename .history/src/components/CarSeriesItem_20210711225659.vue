@@ -3,7 +3,7 @@
  * @Description: 车系列表项
  * @version: 0.0.0
  * @Date: 2021-07-11 19:11:04
- * @LastEditTime: 2021-07-11 23:32:01
+ * @LastEditTime: 2021-07-11 22:56:59
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\components\CarSeriesItem.vue
 -->
@@ -26,28 +26,26 @@
             src="src/assets/webp/1.webp"
             />
         </van-col>
-        <van-col span="11">
-            <div class="car_name">宝马2系旅</div>
-            <div v-if="!isCarRate">
-                <my-rate :rateValue="myRateValue">
-                    <template v-slot:rate_title>
-                        我的：
-                    </template>
-                </my-rate>
-                <my-rate :rateValue="allRateValue">
-                    <template v-slot:rate_title>
-                        综合：
-                    </template>
-                </my-rate>
-            </div>
-            <div v-else>
-                <my-rate :rateValue="testRateScore"></my-rate>
-                 <div class="car_price">指导价：{{price}}万起</div>
-            </div>
-          
+        <van-col span="10">
+            <div class="car_name">宝马2系旅行车新能源(进口)</div>
+            <my-rate :rateValue="3.35">
+                <template v-slot="rate">
+
+                </template>
+            </my-rate>
+           <div v-if="false" class="car_price">指导价：{{price}}万起</div>
+            <div v-else><van-rate
+            v-model="value"
+            readonly 
+            allow-half
+            :size="12"
+            color="#ffd21e"
+            void-icon="star"
+            void-color="#eee"
+           /><span class="car_sart">{{value}}</span></div>
         </van-col>
-        <van-col span="5">
-            <van-tag class="car_tag" color="#FFCC32" size="large"  text-color="#1A1A1A">{{typeCarRate}}</van-tag>
+        <van-col span="6">
+            <van-tag class="car_tag" color="#FFCC32" size="large"  text-color="#1A1A1A">所示大师</van-tag>
         </van-col>
     </van-row>
 </van-config-provider>
@@ -55,19 +53,9 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent, PropType } from 'vue'
+import { ref, defineComponent, onMounted } from 'vue'
 import { Image, Col, Row,Rate,Tag } from 'vant';
 import MyRate from './MyRate.vue'
-
-export interface RateProps{
-    id:number,
-    carSeriesNmae?:number,
-    myRateValue?:number,
-    allRateValue?:number,
-    testRateScore?:number,
-    carSerierPrice?:number,
-    imageUrl?:string
-}
 export default defineComponent({
   name: 'MyTabBar',
   components:{
@@ -79,36 +67,21 @@ export default defineComponent({
     MyRate
   },
   props: {
-    isCarRate:{
-        type:Boolean,
-        required:true
-    },
-    rateList: {
-      type: Object as PropType<RateProps>,
+    title: {
+      type: String,
       required: true
     }
   },
   setup: (props) => {
-    //   我的评分
-    const myRateValue = ref(3.35)
-    // 综合评分
-    const allRateValue = ref(3.55)
-    // 试驾评分
-    const testRateScore = ref(3.69)
-    // 是否是试驾还是重新评分
-    const isCarRate = ref(true)
+    const value = ref(3.35)
     const price = ref(28.25)
-    const typeCarRate = isCarRate.value ===true?'试驾':'重新评分'
     const themeVars = {
         tagLargePadding:'4px 5px'
     };
     return { 
         themeVars,
-        myRateValue,
-        allRateValue,
-        price,
-        typeCarRate,
-        testRateScore
+        value,
+        price
      }
   }
 })

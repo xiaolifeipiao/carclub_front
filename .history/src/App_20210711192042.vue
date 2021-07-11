@@ -1,6 +1,6 @@
 <template>
   <!-- <HelloWorld/> -->
-  <!-- <router-view></router-view> -->
+  <router-view></router-view>
   <car-series-item></car-series-item>
 </template>
 

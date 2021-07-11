@@ -3,7 +3,7 @@
  * @Description: 车系列表项
  * @version: 0.0.0
  * @Date: 2021-07-11 19:11:04
- * @LastEditTime: 2021-07-11 23:32:01
+ * @LastEditTime: 2021-07-11 23:23:47
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\components\CarSeriesItem.vue
 -->
@@ -27,7 +27,7 @@
             />
         </van-col>
         <van-col span="11">
-            <div class="car_name">宝马2系旅</div>
+            <div class="car_name">宝马2系旅行车新能源(进口)</div>
             <div v-if="!isCarRate">
                 <my-rate :rateValue="myRateValue">
                     <template v-slot:rate_title>
@@ -55,19 +55,9 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent, PropType } from 'vue'
+import { ref, defineComponent, onMounted } from 'vue'
 import { Image, Col, Row,Rate,Tag } from 'vant';
 import MyRate from './MyRate.vue'
-
-export interface RateProps{
-    id:number,
-    carSeriesNmae?:number,
-    myRateValue?:number,
-    allRateValue?:number,
-    testRateScore?:number,
-    carSerierPrice?:number,
-    imageUrl?:string
-}
 export default defineComponent({
   name: 'MyTabBar',
   components:{
@@ -84,7 +74,7 @@ export default defineComponent({
         required:true
     },
     rateList: {
-      type: Object as PropType<RateProps>,
+      type: Object as as PropType<RateProps>,
       required: true
     }
   },
@@ -107,6 +97,7 @@ export default defineComponent({
         myRateValue,
         allRateValue,
         price,
+        isCarRate,
         typeCarRate,
         testRateScore
      }
