@@ -3,7 +3,7 @@
 @Description: 路由配置
 @version: 0.0.0
 @Date: 2021-07-07 16:52:36
-@LastEditTime: 2021-07-13 21:22:44
+@LastEditTime: 2021-07-13 20:56:21
 @LastEditors: xiaolifeipiao
 @FilePath: \src\router\index.ts
  */
@@ -24,7 +24,7 @@ export const constRoutes: Array<RouteRecordRaw> = [
     // 主页
     {
         path: '/home',
-        name: 'Homes',
+        name: 'Home',
         component: () => import('../views/Home.vue'),
         meta: {
             keepAlive: true,
@@ -36,24 +36,40 @@ export const constRoutes: Array<RouteRecordRaw> = [
         path: '/brand/:Id',
         name: 'BrandCarSeries',
         component: () => import('../views/BrandCarSeries.vue')
+        // meta: {
+        //     keepAlive: true,
+        //     navName: '登录'
+        // }
     },
     // 测试car360旋转
     {
         path: '/cartest',
         name: 'CarTest',
         component: () => import('../views/CarTest.vue')
+        // meta: {
+        //     keepAlive: true,
+        //     navName: '登录'
+        // }
     },
     // 车系详情页
     {
         path: '/details',
         name: 'CarDetails',
         component: () => import('../views/CarDetails.vue')
+        // meta: {
+        //     keepAlive: true,
+        //     navName: '登录'
+        // }
     },
     // 登录页
     {
         path: '/login',
         name: 'Login',
         component: () => import('../views/Login.vue'),
+        // meta: {
+        //     keepAlive: true,
+        //     navName: '登录'
+        // }
     },
 ]
 

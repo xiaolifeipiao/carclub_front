@@ -3,7 +3,7 @@
  * @Description: 导航栏封装
  * @version: 0.0.0
  * @Date: 2021-07-10 14:34:21
- * @LastEditTime: 2021-07-13 21:24:38
+ * @LastEditTime: 2021-07-12 15:09:04
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\components\NavBar.vue
 -->

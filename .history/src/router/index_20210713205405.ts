@@ -3,7 +3,7 @@
 @Description: 路由配置
 @version: 0.0.0
 @Date: 2021-07-07 16:52:36
-@LastEditTime: 2021-07-13 21:22:44
+@LastEditTime: 2021-07-13 20:54:05
 @LastEditors: xiaolifeipiao
 @FilePath: \src\router\index.ts
  */
@@ -13,6 +13,15 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 
 export const constRoutes: Array<RouteRecordRaw> = [
     {
+        path: '/login',
+        name: 'Login',
+        component: () => import('../views/Login.vue'),
+        // meta: {
+        //     keepAlive: true,
+        //     navName: '登录'
+        // }
+    },
+    {
         path: '/',
         name: 'Home',
         component: () => import('../views/Home.vue'),
@@ -21,40 +30,33 @@ export const constRoutes: Array<RouteRecordRaw> = [
             navName: '主页'
         }
     },
-    // 主页
-    {
-        path: '/home',
-        name: 'Homes',
-        component: () => import('../views/Home.vue'),
-        meta: {
-            keepAlive: true,
-            navName: '主页'
-        }
-    },
-    // 车系页
     {
         path: '/brand/:Id',
         name: 'BrandCarSeries',
         component: () => import('../views/BrandCarSeries.vue')
+        // meta: {
+        //     keepAlive: true,
+        //     navName: '登录'
+        // }
     },
-    // 测试car360旋转
     {
         path: '/cartest',
         name: 'CarTest',
         component: () => import('../views/CarTest.vue')
-    },
-    // 车系详情页
+        // meta: {
+        //     keepAlive: true,
+        //     navName: '登录'
+        // }
+    },CarDetails
     {
-        path: '/details',
-        name: 'CarDetails',
-        component: () => import('../views/CarDetails.vue')
-    },
-    // 登录页
-    {
-        path: '/login',
-        name: 'Login',
-        component: () => import('../views/Login.vue'),
-    },
+        path: '/cartest',
+        name: 'CarTest',
+        component: () => import('../views/CarTest.vue')
+        // meta: {
+        //     keepAlive: true,
+        //     navName: '登录'
+        // }
+    },CarDetails
 ]
 
 const router = createRouter({

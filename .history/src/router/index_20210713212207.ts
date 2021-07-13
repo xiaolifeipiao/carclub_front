@@ -3,7 +3,7 @@
 @Description: 路由配置
 @version: 0.0.0
 @Date: 2021-07-07 16:52:36
-@LastEditTime: 2021-07-13 21:22:44
+@LastEditTime: 2021-07-13 21:22:06
 @LastEditors: xiaolifeipiao
 @FilePath: \src\router\index.ts
  */
@@ -21,16 +21,16 @@ export const constRoutes: Array<RouteRecordRaw> = [
             navName: '主页'
         }
     },
-    // 主页
-    {
-        path: '/home',
-        name: 'Homes',
-        component: () => import('../views/Home.vue'),
-        meta: {
-            keepAlive: true,
-            navName: '主页'
-        }
-    },
+    // // 主页
+    // {
+    //     path: '/home',
+    //     name: 'Home',
+    //     component: () => import('../views/Home.vue'),
+    //     meta: {
+    //         keepAlive: true,
+    //         navName: '主页'
+    //     }
+    // },
     // 车系页
     {
         path: '/brand/:Id',
