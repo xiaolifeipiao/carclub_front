@@ -3,7 +3,7 @@
  * @Description: 品牌车系页
  * @version: 0.0.0
  * @Date: 2021-07-11 19:08:08
- * @LastEditTime: 2021-07-14 23:25:57
+ * @LastEditTime: 2021-07-14 23:24:18
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\views\BrandCarSeries.vue
 -->
@@ -62,11 +62,10 @@ export default defineComponent({
     const show = ref(false)
     onMounted(() => {
       // 将事件发射出去，其实就是把验证函数发射出去
-      // mitter.emit("form-item-created", show.value);
+      mitter.emit("form-item-created", show);
     });
     const Operation =(op,id) =>{
       show.value = true
-      mitter.emit("form-item-created", show.value);
       console.log(op,id)
     }
     // 下拉刷新

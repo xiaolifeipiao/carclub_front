@@ -3,7 +3,7 @@
  * @Description: 车系列表项
  * @version: 0.0.0
  * @Date: 2021-07-11 19:11:04
- * @LastEditTime: 2021-07-14 22:25:58
+ * @LastEditTime: 2021-07-14 22:20:04
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\components\CarSeriesItem.vue
 -->
@@ -88,9 +88,9 @@ export default defineComponent({
     // const price = ref(28.25)
     // const typeCarRate = isCarRate ===true?'试驾':'重新评分'
     
-    const onOperation = (op,id)=>{
+    const onOperation = (op)=>{
         console.log("op")
-        context.emit("onOperation",op,id)
+        context.emit("onOperation",)
     }
     const themeVars = {
         tagLargePadding:'4px 5px'
@@ -102,7 +102,7 @@ export default defineComponent({
         // price,
         // typeCarRate,
         isCarRate,
-        // show,
+        show,
         onOperation
         // testRateScore
      }

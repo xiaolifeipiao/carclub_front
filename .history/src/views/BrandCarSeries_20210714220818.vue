@@ -3,7 +3,7 @@
  * @Description: 品牌车系页
  * @version: 0.0.0
  * @Date: 2021-07-11 19:08:08
- * @LastEditTime: 2021-07-14 23:25:57
+ * @LastEditTime: 2021-07-14 21:42:59
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\views\BrandCarSeries.vue
 -->
@@ -22,25 +22,22 @@
   </van-config-provider>
   <van-pull-refresh  @refresh="onRefresh">
     <div v-for="item in carSerieslist">
-      <car-series-item :isCarRate='true' :rateList="item" :opType=" selectOperationType.TEST_DRIVE" @onOperation="Operation"></car-series-item>
+      <car-series-item :isCarRate='true' :rateList="item" :opType=" selectOperationType.TEST_DRIVE"></car-series-item>
     </div>
   </van-pull-refresh>
-  <model></model>
 </template>
 
 <script lang="ts">
 import { ref, defineComponent, onMounted,reactive } from 'vue'
-import {Tab, Tabs ,Tag  ,PullRefresh,Divider } from 'vant';
-import { useChildren } from '@vant/use';
+import {Tab, Tabs ,Tag  ,PullRefresh,Divider,ActionSheet } from 'vant';
 import { useRoute, useRouter } from 'vue-router';
 import CarSeriesItem from '@coms/CarSeriesItem.vue'
 import NavBar from '@coms/NavBar.vue'
 import SelectQueryNav from '@coms/SelectQueryNav.vue'
-import Model,{mitter} from '@coms/Model.vue'
+import Model from '@coms/Model.vue'
 import {carSeriesModel} from '@/models/carSeriesModel'
 import {selectOperationType} from '@utils/enumType'
 import {brandSelectList} from '@utils/tool'
-
 export default defineComponent({
   name: 'BrandCarSeries',
   components:{
@@ -51,24 +48,13 @@ export default defineComponent({
     [Tag.name]:Tag,
     CarSeriesItem,
     NavBar,
-    SelectQueryNav,
-    Model
+    SelectQueryNav
+    
   },
   setup: (props) => {
     const route = useRoute()
     const brandId = route.params?.brandId
     console.log(brandId)
-    // 是否打开模态框
-    const show = ref(false)
-    onMounted(() => {
-      // 将事件发射出去，其实就是把验证函数发射出去
-      // mitter.emit("form-item-created", show.value);
-    });
-    const Operation =(op,id) =>{
-      show.value = true
-      mitter.emit("form-item-created", show.value);
-      console.log(op,id)
-    }
     // 下拉刷新
     const finished = ref(false)
     const carSerieslist:Array<carSeriesModel>=[
@@ -223,8 +209,7 @@ export default defineComponent({
         selectClick,
         onRefresh,
         selectOperationType,
-        brandSelectList,
-        Operation,
+        brandSelectList
      }
   }
 })

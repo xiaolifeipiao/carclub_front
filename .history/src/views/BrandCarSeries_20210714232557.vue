@@ -62,7 +62,7 @@ export default defineComponent({
     const show = ref(false)
     onMounted(() => {
       // 将事件发射出去，其实就是把验证函数发射出去
-      // mitter.emit("form-item-created", show.value);
+      mitter.emit("form-item-created", show.value);
     });
     const Operation =(op,id) =>{
       show.value = true

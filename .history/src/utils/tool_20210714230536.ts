@@ -3,7 +3,7 @@
 @Description: 工具库
 @version: 0.0.0
 @Date: 2021-07-11 18:13:26
-@LastEditTime: 2021-07-14 23:34:24
+@LastEditTime: 2021-07-14 21:45:11
 @LastEditors: xiaolifeipiao
 @FilePath: \src\utils\tool.ts
  */
@@ -16,3 +16,5 @@ export const driveSelectList = ["全部", "已提交", "待试驾", "已试驾"]
 export const brandSelectList = ["全部", "轿车", "SUV", "MPV"]
 // 车系搜索栏
 export const seriesSelectList = ["在售", "2020款", "2019款", "2018款"]
+
+

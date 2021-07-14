@@ -23,6 +23,7 @@
     "js-cloudimage-360-view": "^2.6.0",
     "js-cookie": "^2.2.1",
     "json-serve": "^0.1.0",
+    "mitt": "^3.0.0",
     "mockjs": "^1.1.0",
     "vant": "^3.1.2",
     "vue": "^3.0.5",

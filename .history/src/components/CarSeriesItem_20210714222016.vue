@@ -3,7 +3,7 @@
  * @Description: 车系列表项
  * @version: 0.0.0
  * @Date: 2021-07-11 19:11:04
- * @LastEditTime: 2021-07-14 22:25:58
+ * @LastEditTime: 2021-07-14 22:20:16
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\components\CarSeriesItem.vue
 -->
@@ -90,7 +90,7 @@ export default defineComponent({
     
     const onOperation = (op,id)=>{
         console.log("op")
-        context.emit("onOperation",op,id)
+        context.emit("onOperation",)
     }
     const themeVars = {
         tagLargePadding:'4px 5px'
@@ -102,7 +102,7 @@ export default defineComponent({
         // price,
         // typeCarRate,
         isCarRate,
-        // show,
+        show,
         onOperation
         // testRateScore
      }

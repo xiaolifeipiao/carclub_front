@@ -1,0 +1,39 @@
+<!--
+ * @Author: xiaolifeipiao
+ * @Description: 模态框封装
+ * @version: 0.0.0
+ * @Date: 2021-07-14 21:54:10
+ * @LastEditTime: 2021-07-14 23:02:57
+ * @LastEditors: xiaolifeipiao
+ * @FilePath: \src\components\Model.vue
+-->
+<template>
+    <van-action-sheet v-model:show="showw" title="标题">
+        <div class="content">内容</div>
+    </van-action-sheet>
+</template>
+<script lang="ts">
+import { defineComponent ,ref} from 'vue'
+import { ActionSheet } from 'vant';
+import { useParent } from '@vant/use';
+const SHOW_KEY = Symbol('my-show');
+export default defineComponent({
+    naem:'Model',
+    components:{
+        [ActionSheet.name]:ActionSheet
+    },
+    setup() {
+        const showw = ref(true)
+         const { parent } = useParent(SHOW_KEY);
+         console.log(parent.show.value)
+         return{
+             showw
+         }
+    },
+})
+</script>
+<style lang="less" scoped>
+  .content {
+    padding: 16px 16px 160px;
+  }
+</style>

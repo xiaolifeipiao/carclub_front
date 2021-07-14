@@ -3,7 +3,7 @@
  * @Description: 车系列表项
  * @version: 0.0.0
  * @Date: 2021-07-11 19:11:04
- * @LastEditTime: 2021-07-14 22:25:58
+ * @LastEditTime: 2021-07-14 22:15:04
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\components\CarSeriesItem.vue
 -->
@@ -37,7 +37,7 @@
                     <div class="car_price">指导价：{{rateList.dealer_price}}万起</div>
                 </div>
             </van-col>
-            <van-col span="5" @click.prevent="onOperation(opType,rateList.id)">
+            <van-col span="5" @click.prevent="onOperation(opType)">
                 <van-tag class="car_tag" color="#FFCC32" size="large"  text-color="#1A1A1A">{{opType}}</van-tag>
             </van-col>
         </van-row>
@@ -88,9 +88,9 @@ export default defineComponent({
     // const price = ref(28.25)
     // const typeCarRate = isCarRate ===true?'试驾':'重新评分'
     
-    const onOperation = (op,id)=>{
+    const onOperation = (op)=>{
         console.log("op")
-        context.emit("onOperation",op,id)
+        context.emit("onOperation",)
     }
     const themeVars = {
         tagLargePadding:'4px 5px'
@@ -102,7 +102,7 @@ export default defineComponent({
         // price,
         // typeCarRate,
         isCarRate,
-        // show,
+        show,
         onOperation
         // testRateScore
      }
