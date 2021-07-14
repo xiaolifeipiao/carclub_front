@@ -1,25 +1,25 @@
 <!--
  * @Author: xiaolifeipiao
- * @Description: 我的试驾
+ * @Description: 我的评分
  * @version: 0.0.0
  * @Date: 2021-07-14 17:29:01
- * @LastEditTime: 2021-07-14 20:32:45
+ * @LastEditTime: 2021-07-14 20:02:32
  * @LastEditors: xiaolifeipiao
- * @FilePath: \src\views\MyDrive.vue
+ * @FilePath: \src\views\MyScore.vue
 -->
 <template>
     <!-- 导航条 -->
-    <nav-bar title="我的试驾"></nav-bar>
+    <nav-bar title="我的评分"></nav-bar>
     <!-- 筛选 -->
      <div class="car_nav">
         <van-tag :plain='taggColor === 0' size="large" :color="taggColor !== 0? '#F6F7FB' : ''"  @click="selectClick(0)"  text-color="#1F2129"   >全部</van-tag>
-        <van-tag :plain='taggColor === 1' class="tag" :color="taggColor !== 1? '#F6F7FB' : ''"  @click="selectClick(1)"  size="large" text-color="#1F2129">已提交</van-tag>
-        <van-tag :plain='taggColor === 2'  class="tag"  :color="taggColor !== 2? '#F6F7FB' : ''"  @click="selectClick(2)"   size="large" text-color="#1F2129" >待试驾</van-tag>
-        <van-tag :plain='taggColor === 3'  class="tag"  :color="taggColor !== 3? '#F6F7FB' : ''"  @click="selectClick(3)"   size="large" text-color="#1F2129" >已试驾</van-tag>
+        <van-tag :plain='taggColor === 1' class="tag" :color="taggColor !== 1? '#F6F7FB' : ''"  @click="selectClick(1)"  size="large" text-color="#1F2129">太差</van-tag>
+        <van-tag :plain='taggColor === 2'  class="tag"  :color="taggColor !== 2? '#F6F7FB' : ''"  @click="selectClick(2)"   size="large" text-color="#1F2129" >一般</van-tag>
+        <van-tag :plain='taggColor === 3'  class="tag"  :color="taggColor !== 3? '#F6F7FB' : ''"  @click="selectClick(3)"   size="large" text-color="#1F2129" >可以</van-tag>
     </div>
     <van-pull-refresh  @refresh="onRefresh">
         <div v-for="item in carSerieslist">
-        <car-series-item :isCarRate='true' :rateList="item" :opType="item.type"></car-series-item>
+        <car-series-item :isCarRate='true' :rateList="item" :opType="selectOperationType."></car-series-item>
     </div>
   </van-pull-refresh>
 </template>
@@ -28,9 +28,8 @@ import { defineComponent,ref } from 'vue'
 import { Tag,PullRefresh} from 'vant'
 import NavBar from '@coms/NavBar.vue'
 import CarSeriesItem from '@coms/CarSeriesItem.vue'
-import {selectOperationType} from '@utils/enumType'
 export default defineComponent({
-    name:'MyDrive',
+    name:'MyScore',
     components:{
         NavBar,
         CarSeriesItem,
@@ -53,7 +52,6 @@ export default defineComponent({
         brand_name:'奥迪',
         dealer_price:26.30,
         dcar_score: 3.88,
-        type:'已提交',
         cover_url:'https://p1-dcd.byteimg.com/img/motor-img/8c3ea5cc5a4111968b4d24c2f86c9cad~tplv-resize:640:0.png',
       },
        {
@@ -63,7 +61,6 @@ export default defineComponent({
         brand_name:'奥迪',
         dealer_price:26.30,
         dcar_score: 3.88,
-        type:'已提交',
         cover_url:'https://p1-dcd.byteimg.com/img/motor-img/8c3ea5cc5a4111968b4d24c2f86c9cad~tplv-resize:640:0.png',
       },
        {
@@ -73,7 +70,6 @@ export default defineComponent({
         brand_name:'奥迪',
         dealer_price:26.30,
         dcar_score: 3.88,
-        type:'已提交',
         cover_url:'https://p1-dcd.byteimg.com/img/motor-img/8c3ea5cc5a4111968b4d24c2f86c9cad~tplv-resize:640:0.png',
       },
        {
@@ -83,7 +79,6 @@ export default defineComponent({
         brand_name:'奥迪',
         dealer_price:26.30,
         dcar_score: 3.88,
-        type:'待试驾',
         cover_url:'https://p1-dcd.byteimg.com/img/motor-img/8c3ea5cc5a4111968b4d24c2f86c9cad~tplv-resize:640:0.png',
       },
        {
@@ -93,7 +88,6 @@ export default defineComponent({
         brand_name:'奥迪',
         dealer_price:26.30,
         dcar_score: 3.88,
-        type:'待试驾',
         cover_url:'https://p1-dcd.byteimg.com/img/motor-img/8c3ea5cc5a4111968b4d24c2f86c9cad~tplv-resize:640:0.png',
       },
        {
@@ -103,7 +97,6 @@ export default defineComponent({
         brand_name:'奥迪',
         dealer_price:26.30,
         dcar_score: 3.88,
-        type:'已提交',
         cover_url:'https://p1-dcd.byteimg.com/img/motor-img/8c3ea5cc5a4111968b4d24c2f86c9cad~tplv-resize:640:0.png',
       },
        {
@@ -112,7 +105,6 @@ export default defineComponent({
         outter_name:'奥迪A4L',
         brand_name:'奥迪',
         dealer_price:26.30,
-        type:'待试驾',
         dcar_score: 3.88,
         cover_url:'https://p1-dcd.byteimg.com/img/motor-img/8c3ea5cc5a4111968b4d24c2f86c9cad~tplv-resize:640:0.png',
       },
@@ -122,7 +114,6 @@ export default defineComponent({
         outter_name:'奥迪A4L',
         brand_name:'奥迪',
         dealer_price:26.30,
-        type:'已试驾',
         dcar_score: 3.88,
         cover_url:'https://p1-dcd.byteimg.com/img/motor-img/8c3ea5cc5a4111968b4d24c2f86c9cad~tplv-resize:640:0.png',
       },
@@ -133,7 +124,6 @@ export default defineComponent({
         brand_name:'奥迪',
         dealer_price:26.30,
         dcar_score: 3.88,
-         type:'已试驾',
         cover_url:'https://p1-dcd.byteimg.com/img/motor-img/8c3ea5cc5a4111968b4d24c2f86c9cad~tplv-resize:640:0.png',
       },
        {
@@ -143,7 +133,6 @@ export default defineComponent({
         brand_name:'奥迪',
         dealer_price:26.30,
         dcar_score: 3.88,
-         type:'已试驾',
         cover_url:'https://p1-dcd.byteimg.com/img/motor-img/8c3ea5cc5a4111968b4d24c2f86c9cad~tplv-resize:640:0.png',
       },
        {
@@ -153,7 +142,6 @@ export default defineComponent({
         brand_name:'奥迪',
         dealer_price:26.30,
         dcar_score: 3.88,
-         type:'已试驾',
         cover_url:'https://p1-dcd.byteimg.com/img/motor-img/8c3ea5cc5a4111968b4d24c2f86c9cad~tplv-resize:640:0.png',
       },
        {
@@ -163,7 +151,6 @@ export default defineComponent({
         brand_name:'奥迪',
         dealer_price:26.30,
         dcar_score: 3.88,
-         type:'已试驾',
         cover_url:'https://p1-dcd.byteimg.com/img/motor-img/8c3ea5cc5a4111968b4d24c2f86c9cad~tplv-resize:640:0.png',
       },
        {
@@ -172,7 +159,6 @@ export default defineComponent({
         outter_name:'奥迪A4L',
         brand_name:'奥迪',
         dealer_price:26.30,
-         type:'已试驾',
         dcar_score: 3.88,
         cover_url:'https://p1-dcd.byteimg.com/img/motor-img/8c3ea5cc5a4111968b4d24c2f86c9cad~tplv-resize:640:0.png',
       },
@@ -193,8 +179,7 @@ export default defineComponent({
             taggColor,
             selectClick,
             onRefresh,
-            carSerieslist,
-            selectOperationType
+            carSerieslist
         }
     },
 })

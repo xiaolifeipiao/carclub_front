@@ -3,7 +3,7 @@
  * @Description: 我的试驾
  * @version: 0.0.0
  * @Date: 2021-07-14 17:29:01
- * @LastEditTime: 2021-07-14 20:32:45
+ * @LastEditTime: 2021-07-14 20:31:18
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\views\MyDrive.vue
 -->
@@ -19,7 +19,7 @@
     </div>
     <van-pull-refresh  @refresh="onRefresh">
         <div v-for="item in carSerieslist">
-        <car-series-item :isCarRate='true' :rateList="item" :opType="item.type"></car-series-item>
+        <car-series-item :isCarRate='true' :rateList="item" opType=""></car-series-item>
     </div>
   </van-pull-refresh>
 </template>
@@ -112,7 +112,6 @@ export default defineComponent({
         outter_name:'奥迪A4L',
         brand_name:'奥迪',
         dealer_price:26.30,
-        type:'待试驾',
         dcar_score: 3.88,
         cover_url:'https://p1-dcd.byteimg.com/img/motor-img/8c3ea5cc5a4111968b4d24c2f86c9cad~tplv-resize:640:0.png',
       },
@@ -122,7 +121,6 @@ export default defineComponent({
         outter_name:'奥迪A4L',
         brand_name:'奥迪',
         dealer_price:26.30,
-        type:'已试驾',
         dcar_score: 3.88,
         cover_url:'https://p1-dcd.byteimg.com/img/motor-img/8c3ea5cc5a4111968b4d24c2f86c9cad~tplv-resize:640:0.png',
       },
@@ -133,7 +131,6 @@ export default defineComponent({
         brand_name:'奥迪',
         dealer_price:26.30,
         dcar_score: 3.88,
-         type:'已试驾',
         cover_url:'https://p1-dcd.byteimg.com/img/motor-img/8c3ea5cc5a4111968b4d24c2f86c9cad~tplv-resize:640:0.png',
       },
        {
@@ -143,7 +140,6 @@ export default defineComponent({
         brand_name:'奥迪',
         dealer_price:26.30,
         dcar_score: 3.88,
-         type:'已试驾',
         cover_url:'https://p1-dcd.byteimg.com/img/motor-img/8c3ea5cc5a4111968b4d24c2f86c9cad~tplv-resize:640:0.png',
       },
        {
@@ -153,7 +149,6 @@ export default defineComponent({
         brand_name:'奥迪',
         dealer_price:26.30,
         dcar_score: 3.88,
-         type:'已试驾',
         cover_url:'https://p1-dcd.byteimg.com/img/motor-img/8c3ea5cc5a4111968b4d24c2f86c9cad~tplv-resize:640:0.png',
       },
        {
@@ -163,7 +158,6 @@ export default defineComponent({
         brand_name:'奥迪',
         dealer_price:26.30,
         dcar_score: 3.88,
-         type:'已试驾',
         cover_url:'https://p1-dcd.byteimg.com/img/motor-img/8c3ea5cc5a4111968b4d24c2f86c9cad~tplv-resize:640:0.png',
       },
        {
@@ -172,7 +166,6 @@ export default defineComponent({
         outter_name:'奥迪A4L',
         brand_name:'奥迪',
         dealer_price:26.30,
-         type:'已试驾',
         dcar_score: 3.88,
         cover_url:'https://p1-dcd.byteimg.com/img/motor-img/8c3ea5cc5a4111968b4d24c2f86c9cad~tplv-resize:640:0.png',
       },

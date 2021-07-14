@@ -3,7 +3,7 @@
 @Description: 枚举类型
 @version: 0.0.0
 @Date: 2021-07-12 20:36:54
-@LastEditTime: 2021-07-14 19:56:48
+@LastEditTime: 2021-07-14 19:47:36
 @LastEditors: xiaolifeipiao
 @FilePath: \src\utils\enumType.ts
  */

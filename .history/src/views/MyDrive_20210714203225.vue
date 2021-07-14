@@ -3,7 +3,7 @@
  * @Description: 我的试驾
  * @version: 0.0.0
  * @Date: 2021-07-14 17:29:01
- * @LastEditTime: 2021-07-14 20:32:45
+ * @LastEditTime: 2021-07-14 20:32:25
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\views\MyDrive.vue
 -->
@@ -19,7 +19,7 @@
     </div>
     <van-pull-refresh  @refresh="onRefresh">
         <div v-for="item in carSerieslist">
-        <car-series-item :isCarRate='true' :rateList="item" :opType="item.type"></car-series-item>
+        <car-series-item :isCarRate='true' :rateList="item" opType=""></car-series-item>
     </div>
   </van-pull-refresh>
 </template>
