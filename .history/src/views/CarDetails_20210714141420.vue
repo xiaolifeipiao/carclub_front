@@ -3,7 +3,7 @@
  * @Description: 车系详情页开发
  * @version: 0.0.0
  * @Date: 2021-07-13 20:51:23
- * @LastEditTime: 2021-07-14 14:14:37
+ * @LastEditTime: 2021-07-14 14:14:20
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\views\CarDetails.vue
 -->
@@ -67,7 +67,6 @@ export default defineComponent({
         const route = useRoute()
         const brandId = route.params?.brandId;
         const carSeriesId = route.params?.carSeriesId
-        console.log(brandId,carSeriesId)
         // 车系
         const title = ref('车系');
         // 定义切换车型

@@ -3,7 +3,7 @@
 @Description: 路由配置
 @version: 0.0.0
 @Date: 2021-07-07 16:52:36
-@LastEditTime: 2021-07-14 14:41:46
+@LastEditTime: 2021-07-14 14:28:28
 @LastEditors: xiaolifeipiao
 @FilePath: \src\router\index.ts
  */
@@ -36,13 +36,7 @@ export const constRoutes: Array<RouteRecordRaw> = [
         path: '/brand',
         name: 'BrandCarSeries',
         component: () => import('../views/BrandCarSeries.vue'),
-        beforeEnter: (to, from) => {
-            // console.log(to, from)
-            if (from.fullPath === "/details") {
-                to.params.brandId = from.params?.brandId
-            }
-            return true
-        },
+        beforeEnter:
         meta: {
             keepAlive: true,
             navName: '品牌页'
@@ -58,7 +52,7 @@ export const constRoutes: Array<RouteRecordRaw> = [
     {
         path: '/details',
         name: 'CarDetails',
-        component: () => import('../views/CarDetails.vue'),
+        component: () => import('../views/CarDetails.vue')
     },
     // 登录页
     {

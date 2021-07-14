@@ -3,7 +3,7 @@
  * @Description: 车型大会首页
  * @version: 0.0.0
  * @Date: 2021-07-10 21:28:15
- * @LastEditTime: 2021-07-14 14:17:32
+ * @LastEditTime: 2021-07-14 14:16:25
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\views\Home.vue
 -->
@@ -39,7 +39,7 @@
             <van-index-anchor class="index_title"   index="选" v-show="false"></van-index-anchor>
         <div v-for="(item,key) in brandAll"  :index="key">
             <van-index-anchor class="index_title" v-if="item.type ===1000"  :index="item.info.pinyin">{{item.info.pinyin}}</van-index-anchor>
-            <van-cell  :to="{name:'BrandCarSeries',params:{brandId:item.info.brand_id}}" v-if="item.type ===1001">
+            <van-cell  :to="{name:''}" v-if="item.type ===1001">
                 <!-- 使用 title 插槽来自定义标题 -->
                 <template #title>
                     <van-image class="index_cell_url" :src="item.info.image_url"></van-image>

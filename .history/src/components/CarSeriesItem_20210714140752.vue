@@ -3,13 +3,13 @@
  * @Description: 车系列表项
  * @version: 0.0.0
  * @Date: 2021-07-11 19:11:04
- * @LastEditTime: 2021-07-14 14:08:31
+ * @LastEditTime: 2021-07-14 14:07:52
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\components\CarSeriesItem.vue
 -->
 <template>
 <van-config-provider :theme-vars="themeVars">
-    <router-link :to="{name:'CarDetails',params: { brandId:rateList.brand_id,carSeriesId:rateList.id}}">
+    <router-link :to="{name:'CarDetails',params: { brandId:rateList.brand_id,rateList. }}">
         <van-row  align="center" class="car">
             <van-col span="8">
                 <van-image
