@@ -3,7 +3,7 @@
  * @Description: 车系详情页开发
  * @version: 0.0.0
  * @Date: 2021-07-13 20:51:23
- * @LastEditTime: 2021-07-14 21:49:02
+ * @LastEditTime: 2021-07-14 21:46:59
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\views\CarDetails.vue
 -->
@@ -32,8 +32,12 @@
         </div>
     </div>
     <!-- 选择车系产期 -->
-    <!-- 筛选 -->
-    <select-query-nav :list="seriesSelectList" @selectClick="selectClick"></select-query-nav>
+    <div class="car_nav">
+      <van-tag :plain='taggColor === 0' size="large" :color="taggColor !== 0? '#F6F7FB' : ''"  @click="selectClick(0)"  text-color="#1F2129"   >在售</van-tag>
+      <van-tag :plain='taggColor === 1' class="tag" :color="taggColor !== 1? '#F6F7FB' : ''"  @click="selectClick(1)"  size="large" text-color="#1F2129">2020款</van-tag>
+      <van-tag :plain='taggColor === 2'  class="tag"  :color="taggColor !== 2? '#F6F7FB' : ''"  @click="selectClick(2)"   size="large" text-color="#1F2129" >2019款</van-tag>
+      <van-tag :plain='taggColor === 3'  class="tag"  :color="taggColor !== 3? '#F6F7FB' : ''"  @click="selectClick(3)"   size="large" text-color="#1F2129" >2018款</van-tag>
+    </div>
     <!-- 列表项 -->
     <!-- 下划线 -->
     <van-divider :style="{ margin: '5px 0 0 0'}" />
@@ -58,8 +62,7 @@ export default defineComponent({
         CarRotates,
         [Tag.name]:Tag,
         [Divider.name]:Divider,
-        SeriesItem,
-        SelectQueryNav
+        SeriesItem
     },
     setup() {
         //获取车系id和品牌id

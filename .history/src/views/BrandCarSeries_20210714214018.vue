@@ -3,7 +3,7 @@
  * @Description: 品牌车系页
  * @version: 0.0.0
  * @Date: 2021-07-11 19:08:08
- * @LastEditTime: 2021-07-14 21:42:59
+ * @LastEditTime: 2021-07-14 21:40:18
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\views\BrandCarSeries.vue
 -->
@@ -16,8 +16,12 @@
       <van-tab title="未售"></van-tab>
       <van-tab title="停售"></van-tab>
     </van-tabs>
-    <!-- 筛选 -->
-     <select-query-nav :list="brandSelectList" @selectClick="selectClick"></select-query-nav>
+    <div class="car_nav">
+      <van-tag :plain='taggColor === 0' size="large" :color="taggColor !== 0? '#F6F7FB' : ''"  @click="selectClick(0)"  text-color="#1F2129"   >全部</van-tag>
+      <van-tag :plain='taggColor === 1' class="tag" :color="taggColor !== 1? '#F6F7FB' : ''"  @click="selectClick(1)"  size="large" text-color="#1F2129">轿车</van-tag>
+      <van-tag :plain='taggColor === 2'  class="tag"  :color="taggColor !== 2? '#F6F7FB' : ''"  @click="selectClick(2)"   size="large" text-color="#1F2129" >SUV</van-tag>
+      <van-tag :plain='taggColor === 3'  class="tag"  :color="taggColor !== 3? '#F6F7FB' : ''"  @click="selectClick(3)"   size="large" text-color="#1F2129" >MPV</van-tag>
+    </div>
     <van-divider />
   </van-config-provider>
   <van-pull-refresh  @refresh="onRefresh">
@@ -33,7 +37,6 @@ import {Tab, Tabs ,Tag  ,PullRefresh,Divider,ActionSheet } from 'vant';
 import { useRoute, useRouter } from 'vue-router';
 import CarSeriesItem from '@coms/CarSeriesItem.vue'
 import NavBar from '@coms/NavBar.vue'
-import SelectQueryNav from '@coms/SelectQueryNav.vue'
 import {carSeriesModel} from '@/models/carSeriesModel'
 import {selectOperationType} from '@utils/enumType'
 import {brandSelectList} from '@utils/tool'
@@ -46,14 +49,14 @@ export default defineComponent({
     [Tabs.name]:Tabs,
     [Tag.name]:Tag,
     CarSeriesItem,
-    NavBar,
-    SelectQueryNav
-    
+    NavBar
   },
   setup: (props) => {
     const route = useRoute()
     const brandId = route.params?.brandId
     console.log(brandId)
+    // 定义切换车型
+    const taggColor = ref(0)
     // 下拉刷新
     const finished = ref(false)
     const carSerieslist:Array<carSeriesModel>=[
@@ -185,10 +188,11 @@ export default defineComponent({
     };
     // 选择车的在售状态
     const onClick = (index, title) => console.log(index,title);
-    // 筛选选择
-    const selectClick =(index,item)=>{
-          console.log(index,item)
-        }
+    // 选择车型
+    const selectClick = (index)=>{
+      console.log(index)
+      taggColor.value = index
+    }
     // 加载数据
     const onLoad =async()=>{
       await getALLL();
@@ -206,9 +210,9 @@ export default defineComponent({
         carSerieslist,
         onClick,
         selectClick,
+        taggColor,
         onRefresh,
-        selectOperationType,
-        brandSelectList
+        selectOperationType
      }
   }
 })
@@ -218,6 +222,16 @@ export default defineComponent({
   width: 200px;
   height: 44px;
   margin-left: 5px;
+}
+.car_nav{
+  margin: 5px 16px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  .tag{
+    margin-left: 10px;
+  }
 }
 
 </style>

@@ -3,7 +3,7 @@
  * @Description: 品牌车系页
  * @version: 0.0.0
  * @Date: 2021-07-11 19:08:08
- * @LastEditTime: 2021-07-14 21:42:59
+ * @LastEditTime: 2021-07-14 21:41:10
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\views\BrandCarSeries.vue
 -->
@@ -17,7 +17,7 @@
       <van-tab title="停售"></van-tab>
     </van-tabs>
     <!-- 筛选 -->
-     <select-query-nav :list="brandSelectList" @selectClick="selectClick"></select-query-nav>
+     <select-query-nav :list="driveSelectList" @selectClick="selectClick"></select-query-nav>
     <van-divider />
   </van-config-provider>
   <van-pull-refresh  @refresh="onRefresh">
@@ -54,6 +54,8 @@ export default defineComponent({
     const route = useRoute()
     const brandId = route.params?.brandId
     console.log(brandId)
+    // 定义切换车型
+    const taggColor = ref(0)
     // 下拉刷新
     const finished = ref(false)
     const carSerieslist:Array<carSeriesModel>=[
@@ -185,10 +187,11 @@ export default defineComponent({
     };
     // 选择车的在售状态
     const onClick = (index, title) => console.log(index,title);
-    // 筛选选择
-    const selectClick =(index,item)=>{
-          console.log(index,item)
-        }
+    // 选择车型
+    const selectClick = (index)=>{
+      console.log(index)
+      taggColor.value = index
+    }
     // 加载数据
     const onLoad =async()=>{
       await getALLL();
@@ -206,9 +209,9 @@ export default defineComponent({
         carSerieslist,
         onClick,
         selectClick,
+        taggColor,
         onRefresh,
-        selectOperationType,
-        brandSelectList
+        selectOperationType
      }
   }
 })
@@ -218,6 +221,16 @@ export default defineComponent({
   width: 200px;
   height: 44px;
   margin-left: 5px;
+}
+.car_nav{
+  margin: 5px 16px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  .tag{
+    margin-left: 10px;
+  }
 }
 
 </style>

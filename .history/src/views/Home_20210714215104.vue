@@ -3,13 +3,13 @@
  * @Description: 车型大会首页
  * @version: 0.0.0
  * @Date: 2021-07-10 21:28:15
- * @LastEditTime: 2021-07-14 21:51:25
+ * @LastEditTime: 2021-07-14 21:51:03
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\views\Home.vue
 -->
 <template>
     <!-- 导航条 -->
-    <nav-bar title="车型大会"></nav-bar>
+    <nav-bar :title="carTitle"></nav-bar>
     <div class="brand">
         <van-grid :column-num="5" :border="false" :gutter="2">
         <van-grid-item v-for="item in brandList" :key="item.brand_id"  :to="{name: 'BrandCarSeries', params:{brandId:item.brand_id}}">
@@ -5134,6 +5134,7 @@ export default defineComponent({
         })
     }
     return {
+        carTitle,
         brandList,
         related,
         themeVars,

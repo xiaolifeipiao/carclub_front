@@ -3,7 +3,7 @@
  * @Description: 品牌车系页
  * @version: 0.0.0
  * @Date: 2021-07-11 19:08:08
- * @LastEditTime: 2021-07-14 21:42:59
+ * @LastEditTime: 2021-07-14 21:41:10
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\views\BrandCarSeries.vue
 -->
@@ -185,10 +185,7 @@ export default defineComponent({
     };
     // 选择车的在售状态
     const onClick = (index, title) => console.log(index,title);
-    // 筛选选择
-    const selectClick =(index,item)=>{
-          console.log(index,item)
-        }
+ 
     // 加载数据
     const onLoad =async()=>{
       await getALLL();

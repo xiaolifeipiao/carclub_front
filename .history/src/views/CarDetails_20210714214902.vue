@@ -3,7 +3,7 @@
  * @Description: 车系详情页开发
  * @version: 0.0.0
  * @Date: 2021-07-13 20:51:23
- * @LastEditTime: 2021-07-14 21:49:02
+ * @LastEditTime: 2021-07-14 21:48:53
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\views\CarDetails.vue
 -->

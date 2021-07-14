@@ -3,7 +3,7 @@
  * @Description: 车系详情页开发
  * @version: 0.0.0
  * @Date: 2021-07-13 20:51:23
- * @LastEditTime: 2021-07-14 21:49:02
+ * @LastEditTime: 2021-07-14 21:48:24
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\views\CarDetails.vue
 -->
@@ -33,7 +33,7 @@
     </div>
     <!-- 选择车系产期 -->
     <!-- 筛选 -->
-    <select-query-nav :list="seriesSelectList" @selectClick="selectClick"></select-query-nav>
+    <select-query-nav :list="rateSelectList" @selectClick="selectClick"></select-query-nav>
     <!-- 列表项 -->
     <!-- 下划线 -->
     <van-divider :style="{ margin: '5px 0 0 0'}" />

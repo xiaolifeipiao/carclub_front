@@ -3,7 +3,7 @@
  * @Description: 我的试驾
  * @version: 0.0.0
  * @Date: 2021-07-14 17:29:01
- * @LastEditTime: 2021-07-14 21:46:42
+ * @LastEditTime: 2021-07-14 21:33:09
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\views\MyDrive.vue
 -->
@@ -36,10 +36,10 @@ export default defineComponent({
         SelectQueryNav
     },
     setup() {
-        // console.log(driveSelectList)
-        const selectClick =(index,item)=>{
-          console.log(index,item)
-        }
+      console.log(driveSelectList)
+      const selectClick = (index,item)=>{
+          console.log(index.item)
+      }
         const carSerieslist:Array<carSeriesModel>=[
     {
       id:1,

@@ -15,4 +15,4 @@ export const driveSelectList = ["全部", "已提交", "待试驾", "已试驾"]
 // 品牌搜索栏
 export const brandSelectList = ["全部", "轿车", "SUV", "MPV"]
 // 车系搜索栏
-export const seriesSelectList = ["在售","2020款","2019款","2018款"]
+export const seriesSelcetList = ["在售","2020款","2019款","2018款"]
