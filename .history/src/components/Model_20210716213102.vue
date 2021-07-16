@@ -3,7 +3,7 @@
  * @Description: 模态框封装
  * @version: 0.0.0
  * @Date: 2021-07-14 21:54:10
- * @LastEditTime: 2021-07-16 21:31:02
+ * @LastEditTime: 2021-07-16 18:20:00
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\components\Model.vue
 -->
