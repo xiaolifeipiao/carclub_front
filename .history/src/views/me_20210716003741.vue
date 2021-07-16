@@ -3,7 +3,7 @@
  * @Description: 我的页面
  * @version: 0.0.0
  * @Date: 2021-07-14 14:48:41
- * @LastEditTime: 2021-07-15 14:58:42
+ * @LastEditTime: 2021-07-16 00:37:41
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\views\me.vue
 -->
@@ -11,7 +11,7 @@
     <!-- 导航 -->
     <my-nav-bar title="我的"></my-nav-bar>
     <!-- 用户信息栏 -->
-    <div class="user_info">
+    <div class="user_info" @click.prevent="updateAvatar">
         <div class="user_image">
             <img src="../assets/avatar.jpg" />
             <span>
@@ -36,25 +36,51 @@
     <div class="bag"></div>
     <!-- 切换账号 -->
     <button class="btn_tag">切换账号</button>
+    <!-- 弹出层 -->
+    <van-overlay :show="show" >
+    <div class="wrapper" @click.stop>
+        <div class="block">
+            <van-uploader>
+                <button class="btn_upload">从相册选择</button>
+            </van-uploader>
+             <van-uploader>
+                <button class="btn_upload">从相册选择</button>
+            </van-uploader>
+             <van-uploader>
+                <button class="btn_upload">从相册选择</button>
+            </van-uploader>
+        </div>
+    </div>
+</van-overlay>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue'
-import {Cell, CellGroup} from 'vant'
+import { defineComponent ,ref} from 'vue'
+import {Cell, CellGroup,Overlay,Uploader } from 'vant'
 import MyNavBar from '@coms/MyNavBar.vue'
 export default defineComponent({
     name:'Me',
     components:{
         MyNavBar,
         [Cell.name]:Cell,
-        [CellGroup.name]:CellGroup
+        [CellGroup.name]:CellGroup,
+        [Uploader.name]:Uploader,
+        [Overlay.name]:Overlay
     },
     setup() {
+        // 定义弹出
+        const show = ref(false)
+        // 修改头像
+        const updateAvatar=()=>{
+            show.value =true
+        }
         const themeVars ={
             cellIconSize:'20px',
             cellFontSize:'16px',
         }
         return{
-            themeVars
+            themeVars,
+            updateAvatar,
+            show
         }
     },
 })
@@ -121,5 +147,29 @@ export default defineComponent({
     font-weight: 500;
     border: 0;
     background-color: #fff;
+}
+
+// 弹出层样式
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .block {
+    width: 160px;
+    height: 120px;
+    background-color: #fff;
+  }
+.btn_upload{
+  display: flex;
+  align-items: center;
+//   justify-content: center;
+    display: block;
+    border: 0;
+    height: ;
+    background-color: #fff;
+    margin: 10px 0 0 16px;
 }
 </style>
