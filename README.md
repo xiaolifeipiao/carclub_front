@@ -18,7 +18,7 @@ carclub-front
 │  └─ favicon.ico
 ├─ README.md                       // md说明文档
 ├─ src                          
-│  ├─ apis                        // api接口
+│  ├─ apis                         // api接口
 │  │  └─ users.ts
 │  ├─ App.vue                     
 │  ├─ assets
