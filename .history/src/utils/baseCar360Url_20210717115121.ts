@@ -3,7 +3,7 @@
 @Description: 车的旋转加载 图片路径   
 @version: 0.0.0
 @Date: 2021-07-10 13:16:44
-@LastEditTime: 2021-07-17 11:51:28
+@LastEditTime: 2021-07-13 15:57:44
 @LastEditors: xiaolifeipiao
 @FilePath: \src\utils\baseCar360Url.ts
  */
