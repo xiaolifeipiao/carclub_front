@@ -3,7 +3,7 @@
  * @Description: 品牌车系页
  * @version: 0.0.0
  * @Date: 2021-07-11 19:08:08
- * @LastEditTime: 2021-07-18 16:08:55
+ * @LastEditTime: 2021-07-18 16:07:59
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\views\BrandCarSeries.vue
 -->
@@ -63,7 +63,7 @@ export default defineComponent({
     // 是否打开模态框
     const show = ref(false)
     onMounted(() => {
-      // 将事件发射出去，其实就是把函数发射出去
+      // 将事件发射出去，其实就是把验证函数发射出去
       // mitter.emit("form-item-created", show.value);
     });
     const Operation =(op,id) =>{
@@ -73,7 +73,6 @@ export default defineComponent({
     }
     // 下拉刷新
     const finished = ref(false)
-    // 模拟数据
     const carSerieslist:Array<carSeriesModel>=[
       {
         id:1,
@@ -210,10 +209,9 @@ export default defineComponent({
     // 加载数据
     const onLoad =async()=>{
       // 请求数组处理
-      // await getALLL();
+      await getALLL();
       finished.value=true
     }
-    // 下拉刷新
     const onRefresh = () => {
       // 清空列表数据
       finished.value = false;

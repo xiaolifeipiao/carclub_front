@@ -3,7 +3,7 @@
  * @Description: login
  * @version: 0.0.0
  * @Date: 2021-07-10 16:26:39
- * @LastEditTime: 2021-07-18 16:10:21
+ * @LastEditTime: 2021-07-16 20:30:25
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\views\login.vue
 -->
@@ -87,7 +87,7 @@ export default defineComponent({
     const onSubmit =async(userInfo) => {
       console.log(userInfo)
       // 登录处理
-      await store.dispatch(UserActionTypes.ACTION_LOGIN,userInfo)
+      // await store.dispatch(UserActionTypes.ACTION_LOGIN,userInfo)
       Toast.success('登录成功');
        router.push({name:'Me'})
     };

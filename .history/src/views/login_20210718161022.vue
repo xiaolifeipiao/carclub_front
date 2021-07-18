@@ -87,7 +87,7 @@ export default defineComponent({
     const onSubmit =async(userInfo) => {
       console.log(userInfo)
       // 登录处理
-      await store.dispatch(UserActionTypes.ACTION_LOGIN,userInfo)
+      // await store.dispatch(UserActionTypes.ACTION_LOGIN,userInfo)
       Toast.success('登录成功');
        router.push({name:'Me'})
     };
