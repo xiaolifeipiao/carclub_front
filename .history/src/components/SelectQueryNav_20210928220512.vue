@@ -3,7 +3,7 @@
  * @Description: 选择查询条件封装
  * @version: 0.0.0
  * @Date: 2021-07-14 20:36:04
- * @LastEditTime: 2021-07-14 21:10:50
+ * @LastEditTime: 2021-09-28 22:05:12
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\components\SelectQueryNav.vue
 -->
@@ -25,16 +25,17 @@ export default defineComponent({
         }
     },
     emits:['selectClick'],
+    
     components:{
         [Tag.name]:Tag
     },
-    setup(content) {
+    setup(props, context) {
         // 定义切换车型
         const taggColor = ref(0)
          // 选择车型
         const selectClick = (index,item)=>{
-            emit('selectClick',index,item)
-            console.log(index,item)
+            context.emit('selectClick',index,item)
+            // console.log(index,item)
             taggColor.value = index
         }
         return{

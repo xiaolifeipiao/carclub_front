@@ -3,7 +3,7 @@
  * @Description: 选择查询条件封装
  * @version: 0.0.0
  * @Date: 2021-07-14 20:36:04
- * @LastEditTime: 2021-07-14 21:18:15
+ * @LastEditTime: 2021-09-28 22:05:12
  * @LastEditors: xiaolifeipiao
  * @FilePath: \src\components\SelectQueryNav.vue
 -->
@@ -25,6 +25,7 @@ export default defineComponent({
         }
     },
     emits:['selectClick'],
+    
     components:{
         [Tag.name]:Tag
     },
